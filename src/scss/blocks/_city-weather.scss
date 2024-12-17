@@ -1,0 +1,83 @@
+.city {
+  max-width: 556px;
+  height: 314px;
+  background-color: var(--bgcolor-gray);
+  border-radius: var(--border-radius);
+  position: relative;
+  &__location {
+    max-width: 228px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--bgcolor-gray-inside);
+    border-radius: var(--border-radius-small);
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    &-image {
+      align-items: center;
+    }
+    &-name {
+      font-family: "inter";
+      font-size: 18px;
+    }
+  }
+  &__select {
+    padding: 8px;
+    background-color: var(--bgcolor-gray-inside);
+    border-radius: var(--border-radius-small);
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+  }
+  &__date {
+    position: absolute;
+    top: 72px;
+    left: 24px;
+    &-week {
+      font-size: 36px;
+      font-weight: 500;
+    }
+  }
+  &__weather {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+
+    &-loading {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+    }
+
+    &-temp-max {
+      font-weight: 500;
+      font-size: 40px;
+      text-align: right;
+    }
+    &-temp-min {
+      font-weight: 500;
+      font-size: 24px;
+      color: var(--color-gray-temp);
+      text-align: right;
+    }
+    &-description {
+      font-weight: 500;
+      font-size: 20px;
+    }
+    &-image {
+      position: absolute;
+      right: 228px;
+      bottom: 41px;
+      width: 100px;
+      height: 100px;
+    }
+  }
+}

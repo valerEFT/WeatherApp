@@ -1,0 +1,23 @@
+.list {
+  position: relative;
+  background-color: var(--bgcolor-gray);
+  max-width: fit-content;
+  height: 812px;
+  border-radius: var(--border-radius-large);
+  &__item:first-child {
+    padding-top: 48px;
+    padding-bottom: 24px;
+    padding-inline: 30px;
+  }
+  &__item {
+    padding-top: 24px;
+    padding-inline: 30px;
+  }
+  &__item:last-child {
+    position: absolute;
+    bottom: 48px;
+  }
+  &__item-image {
+    cursor: pointer;
+  }
+}

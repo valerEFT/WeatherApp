@@ -1,0 +1,20 @@
+.container {
+  max-width: var(--container-width);
+  margin: 44px auto;
+}
+
+.hidden-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  @include mobile-above {
+    display: none !important;
+  }
+}
+
+.hidden {
+  display: none !important;
+}

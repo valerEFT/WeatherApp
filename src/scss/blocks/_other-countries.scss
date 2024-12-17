@@ -1,0 +1,51 @@
+.other-countries {
+  max-width: 556px;
+  width: 100%;
+  height: 394px;
+  background-color: var(--bgcolor-gray);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  overflow: auto;
+  &__select {
+    border: none;
+  }
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__wrapper {
+    margin-top: 24px;
+    max-width: 508px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bgcolor-weather-card);
+    border-radius: var(--border-radius);
+  }
+  &-left-side-wrapper {
+    padding: 24px;
+  }
+  &-right-side-wrapper {
+    padding: 24px;
+    height: fit-content;
+    align-self: center;
+  }
+  &__image {
+    width: 68px;
+    height: 68px;
+    align-self: center;
+  }
+
+  &__temp-max {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__temp-min {
+    color: var(--color-gray-temp);
+    font-size: 18px;
+  }
+}

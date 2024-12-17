@@ -1,0 +1,10 @@
+@import "globals";
+@import "variables";
+@import "mixins";
+@import "normalize";
+@import "media";
+@import "utils";
+
+@import "./blocks/sidebar", "./blocks/header", "./blocks/home",
+  "./blocks/city-weather", "./blocks/main", "./blocks/other-countries",
+  "./blocks/todays-highlight", "./blocks/forecast";

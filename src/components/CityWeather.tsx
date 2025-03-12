@@ -20,7 +20,7 @@ const CityWeather: React.FC = () => {
   if (inputValue && !forecastData)
     return (
       <section className="city">
-        <p>Loading...</p>
+        <p style={{ padding: "24px" }}>Loading...</p>
       </section>
     );
 

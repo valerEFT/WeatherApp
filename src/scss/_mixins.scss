@@ -8,18 +8,8 @@
   align-items: center;
 }
 
-@mixin display-column {
-  display: flex;
-  flex-direction: column;
-}
-
 @mixin reset-button {
   padding: 0;
   background-color: transparent;
   border: none;
-}
-
-@mixin square($size) {
-  width: $size;
-  aspect-ratio: 1;
 }

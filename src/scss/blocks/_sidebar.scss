@@ -1,22 +1,30 @@
+@import "../media";
 .list {
   position: relative;
   background-color: var(--bgcolor-gray);
   max-width: fit-content;
-  height: 812px;
+  height: fit-content;
   border-radius: var(--border-radius-large);
+  padding-bottom: 10px;
+  @include mobile-s {
+    border-radius: var(--border-radius-small);
+  }
   &__item:first-child {
     padding-top: 48px;
     padding-bottom: 24px;
     padding-inline: 30px;
+    @include mobile-s {
+      padding-inline: 15px;
+    }
   }
   &__item {
     padding-top: 24px;
     padding-inline: 30px;
+    @include mobile-s {
+      padding-inline: 15px;
+    }
   }
-  &__item:last-child {
-    position: absolute;
-    bottom: 48px;
-  }
+
   &__item-image {
     cursor: pointer;
   }

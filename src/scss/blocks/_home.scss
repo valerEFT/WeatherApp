@@ -1,3 +1,7 @@
 .home {
   display: flex;
+  padding-inline: 15px;
+  @include mobile-s {
+    padding-inline: 10px;
+  }
 }

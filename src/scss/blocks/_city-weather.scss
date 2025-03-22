@@ -1,8 +1,12 @@
 .city {
   max-width: 556px;
+  @include mobile {
+    max-width: 360px;
+  }
   height: 314px;
   background-color: var(--bgcolor-gray);
   border-radius: var(--border-radius);
+  padding: 24px;
   position: relative;
   &__location {
     max-width: 228px;
@@ -14,12 +18,7 @@
     gap: 8px;
     background-color: var(--bgcolor-gray-inside);
     border-radius: var(--border-radius-small);
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    &-image {
-      align-items: center;
-    }
+
     &-name {
       font-family: "inter";
       font-size: 18px;
@@ -29,17 +28,14 @@
     padding: 8px;
     background-color: var(--bgcolor-gray-inside);
     border-radius: var(--border-radius-small);
-    position: absolute;
-    top: 24px;
-    right: 24px;
     cursor: pointer;
+    position: absolute;
+    right: 24px;
+    top: 24px;
   }
   &__date {
-    position: absolute;
-    top: 72px;
-    left: 24px;
     &-week {
-      font-size: 36px;
+      @include fluid-text(36, 20);
       font-weight: 500;
     }
   }
@@ -47,9 +43,6 @@
     display: flex;
     flex-direction: column;
     gap: 45px;
-    position: absolute;
-    right: 24px;
-    bottom: 24px;
 
     &-loading {
       position: absolute;
@@ -78,6 +71,10 @@
       bottom: 41px;
       width: 100px;
       height: 100px;
+      @include mobile {
+        right: 150px;
+        bottom: 100px;
+      }
     }
   }
 }

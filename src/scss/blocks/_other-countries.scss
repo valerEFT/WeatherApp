@@ -5,6 +5,10 @@
   background-color: var(--bgcolor-gray);
   border-radius: var(--border-radius);
   padding: 24px;
+  @include mobile {
+    max-width: 360px;
+    padding: 12px;
+  }
   overflow: auto;
   &__select {
     border: none;
@@ -27,6 +31,9 @@
   }
   &-left-side-wrapper {
     padding: 24px;
+    @include mobile {
+      padding: 14px;
+    }
   }
   &-right-side-wrapper {
     padding: 24px;

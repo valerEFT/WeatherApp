@@ -1,22 +1,38 @@
+@import "../media";
 .main {
   max-width: 1245px;
   width: 100%;
   height: 736px;
-  margin-left: 24px;
+  @include mobile-above {
+    margin-left: 24px;
+  }
   &__wrapper {
     display: flex;
     gap: 24px;
     margin-top: 24px;
+    @include desktop {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
   &__left {
     max-width: 556px;
-    width: 100%;
+    @include mobile-above {
+      width: 100%;
+    }
     display: flex;
     flex-direction: column;
     gap: 24px;
   }
   &__right {
     max-width: 664px;
+    @include desktop {
+      max-width: 556px;
+    }
+    @include mobile {
+      max-width: 370px;
+      margin: 0 auto;
+    }
     width: 100%;
     display: flex;
     flex-direction: column;

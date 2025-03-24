@@ -1,15 +1,25 @@
-import React, { ChangeEvent } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { AppDispath, RootState } from "../app/store";
+import React, { ChangeEvent, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { AppDispath } from "../app/store";
 import { setInputValue } from "../features/slices/InputSlice";
 import DarkMode from "./DarkMode";
 
 const Header: React.FC = () => {
   const dispatch = useDispatch<AppDispath>();
-  const inputValue = useSelector((state: RootState) => state.inputValue.value);
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      dispatch(setInputValue(query));
+    }, 500);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [query]);
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
-    dispatch(setInputValue(e.target.value));
+    setQuery(e.target.value);
   };
 
   return (
@@ -21,7 +31,7 @@ const Header: React.FC = () => {
           type="text"
           placeholder="Search your location"
           onChange={handleInput}
-          value={inputValue}
+          value={query}
         />
         <img
           className="header__input-image"

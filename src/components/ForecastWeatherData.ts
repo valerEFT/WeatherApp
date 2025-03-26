@@ -44,7 +44,7 @@ export const useForecastWeatherData = (inputValue: string) => {
         forecastSetData(null);
       }
     };
-    ForecastAPIFetch();
+    inputValue && ForecastAPIFetch();
   }, [inputValue]);
 
   return { forecastData, forecastError };

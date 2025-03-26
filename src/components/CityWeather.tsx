@@ -5,7 +5,7 @@ import { useForecastWeatherData } from "./ForecastWeatherData";
 import { weatherImages } from "./WeatherImages";
 
 const CityWeather: React.FC = () => {
-  const inputValue = useSelector((state: RootState) => state.inputValue.value);
+  const inputValue = useSelector((state: RootState) => state.input.value);
 
   const { forecastData } = useForecastWeatherData(inputValue);
 

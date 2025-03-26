@@ -3,7 +3,7 @@ import InputValueReducer from "../features/slices/InputSlice";
 import themeReducer from "../features/slices/theme";
 export const store = configureStore({
   reducer: {
-    inputValue: InputValueReducer,
+    input: InputValueReducer,
     theme: themeReducer,
   },
 });

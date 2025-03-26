@@ -5,7 +5,7 @@ import { weatherImages } from "./WeatherImages";
 import { renderWeekend } from "./TimeTransformer";
 
 const TenDayForecast: React.FC = () => {
-  const inputValue = useSelector((state: RootState) => state.inputValue.value);
+  const inputValue = useSelector((state: RootState) => state.input.value);
   const { forecastData } = useForecastWeatherData(inputValue);
 
   if (!inputValue) {

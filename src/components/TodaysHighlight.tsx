@@ -5,7 +5,7 @@ import TimeTransformer from "./TimeTransformer";
 
 const TodaysHighlight: React.FC = () => {
   const inputValue: string = useSelector(
-    (state: RootState) => state.inputValue.value
+    (state: RootState) => state.input.value
   );
   const { forecastData } = useForecastWeatherData(inputValue);
 

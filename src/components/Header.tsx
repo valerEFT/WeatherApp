@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { ChangeEvent } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispath } from "../app/store";
 import { setInputValue } from "../features/slices/InputSlice";
@@ -6,21 +6,20 @@ import DarkMode from "./DarkMode";
 
 const Header: React.FC = () => {
   const dispatch = useDispatch<AppDispath>();
-  const [query, setQuery] = useState("");
+  const debounce = (func: (...args: any[]) => void, delay: number) => {
+    let timeout: any;
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      dispatch(setInputValue(query));
-    }, 500);
-
-    return () => {
+    return (...args: any[]) => {
       clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        func(...args);
+      }, delay);
     };
-  }, [query]);
-
-  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value);
   };
+
+  const handleInput = debounce((e: ChangeEvent<HTMLInputElement>) => {
+    dispatch(setInputValue(e.target.value));
+  }, 500);
 
   return (
     <header className="header">
@@ -31,7 +30,6 @@ const Header: React.FC = () => {
           type="text"
           placeholder="Search your location"
           onChange={handleInput}
-          value={query}
         />
         <img
           className="header__input-image"

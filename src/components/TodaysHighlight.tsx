@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../app/store";
-import { useForecastWeatherData } from "./ForecastWeatherData";
+import { useForecastWeatherData } from "../hooks/UseForecastWeatherData";
 import TimeTransformer from "./TimeTransformer";
 
 const TodaysHighlight: React.FC = () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../app/store";
-import { useForecastWeatherData } from "./ForecastWeatherData";
+import { useForecastWeatherData } from "../hooks/UseForecastWeatherData";
 import { weatherImages } from "./WeatherImages";
 
 const CityWeather: React.FC = () => {

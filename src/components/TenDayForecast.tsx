@@ -1,4 +1,4 @@
-import { useForecastWeatherData } from "./ForecastWeatherData";
+import { useForecastWeatherData } from "../hooks/UseForecastWeatherData";
 import { useSelector } from "react-redux";
 import { RootState } from "../app/store";
 import { weatherImages } from "./WeatherImages";

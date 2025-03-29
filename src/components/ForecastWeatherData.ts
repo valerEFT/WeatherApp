@@ -28,8 +28,8 @@ interface ForecastData {
 }
 
 export const useForecastWeatherData = (inputValue: string) => {
-  const [forecastData, forecastSetData] = useState<ForecastData | null>(null);
-  const [forecastError, forecastSetError] = useState<string | null>(null);
+  const [forecastData, setForecastData] = useState<ForecastData | null>(null);
+  const [forecastError, setForecastError] = useState<string | null>(null);
 
   useEffect(() => {
     const ForecastAPIFetch = async () => {
@@ -37,11 +37,11 @@ export const useForecastWeatherData = (inputValue: string) => {
         const response = await axios.get(
           `https://api.openweathermap.org/data/2.5/forecast?q=${inputValue}&appid=aca2404c4e92b8c9acf7d6ca33d7b40a`
         );
-        forecastSetError(null);
-        forecastSetData(response.data);
+        setForecastError(null);
+        setForecastData(response.data);
       } catch (err) {
-        forecastSetError("Forecast fetching data: Error!");
-        forecastSetData(null);
+        setForecastError("Forecast fetching data: Error!");
+        setForecastData(null);
       }
     };
     inputValue && ForecastAPIFetch();
